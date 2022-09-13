@@ -70,13 +70,15 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (10.4.7.0)
       execjs (~> 2)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
-    bootstrap (5.2.0)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.11.5, < 3)
-      sassc-rails (>= 2.0.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -96,6 +98,8 @@ GEM
     digest (3.1.0)
     erubi (1.11.0)
     execjs (2.8.1)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -139,7 +143,6 @@ GEM
     nokogiri (1.13.8-x86_64-darwin)
       racc (~> 1.4)
     pg (1.4.3)
-    popper_js (2.11.5)
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
@@ -235,6 +238,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.0)
@@ -243,16 +247,19 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap
-  bootstrap (~> 5.2)
+  bootstrap-sass (= 3.4.1)
+  bootstrap-will_paginate (= 1.0.0)
   capybara
   debug
+  faker (= 2.21.0)
   importmap-rails
   jbuilder
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
-  sassc-rails
+  sassc-rails (= 2.1.2)
   selenium-webdriver
   simple_form
   slim-rails (~> 3.5, >= 3.5.1)
@@ -262,6 +269,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  will_paginate (= 3.3.1)
 
 RUBY VERSION
    ruby 3.1.2p20
