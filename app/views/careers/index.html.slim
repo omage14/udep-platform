@@ -1,0 +1,26 @@
+.container-fluid
+  .row
+    .col
+      h1 Career
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th scope="col" 
+        th scope="col" Name
+    tbody
+      - @careers.each do |obj|
+        tr
+          td = obj.id
+          td = obj.name
+          td
+            = link_to  "Show", career_path(obj)
+          td
+            = link_to  'Edit', edit_career_path(obj)
+          td
+            = link_to "Delete", career_path(obj), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
+
+  br
+  = link_to 'New career', new_career_path, class:"btn btn-secondary"
+      
+
+

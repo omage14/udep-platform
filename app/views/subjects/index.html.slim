@@ -1,0 +1,28 @@
+.container-fluid
+  .row
+    .col
+      h1 Subject
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th scope="col" 
+        th scope="col" Name
+        th scope="col" Code
+    tbody
+      - @subjects.each do |obj|
+        tr
+          td = obj.id
+          td = obj.name
+          td = obj.code
+          td
+            = link_to  "Show", subject_path(obj)
+          td
+            = link_to  'Edit', edit_subject_path(obj)
+          td
+            = link_to "Delete", subject_path(obj), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
+
+  br
+  = link_to 'New Subject', new_subject_path, class:"btn btn-secondary"
+      
+
+

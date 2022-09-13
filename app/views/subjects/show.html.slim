@@ -1,0 +1,8 @@
+card
+  .card-content
+    h4.display-4
+      = @subject.name
+br
+= link_to 'Edit', edit_subject_path(@subject), class:"btn btn-secondary"
+span style="padding: 2px 2px 2px 2px;"
+= link_to 'Back', subjects_path, class:"btn btn-dark"

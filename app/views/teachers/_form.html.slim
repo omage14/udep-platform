@@ -1,0 +1,16 @@
+= simple_form_for(@teacher) do |f|
+  .row
+    = f.input :name
+    = f.input :last_name
+    = f.input :maiden_name
+    = f.input :email
+    = f.input :mobile_phone
+    = f.input :rfc
+    = f.input :curp
+    = f.input :phone
+    = f.input :gender
+    = f.input :birthdate
+    = f.input :nationality
+
+  br
+    = f.submit class:'btn btn-primary'

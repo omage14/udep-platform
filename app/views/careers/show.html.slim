@@ -1,0 +1,8 @@
+.card
+  .card-content
+    h4.display-4
+      = @career.name
+br
+= link_to 'Edit', edit_career_path(@career), class:"btn btn-secondary"
+span style="padding: 2px 2px 2px 2px;"
+= link_to 'Back', careers_path, class:"btn btn-dark"

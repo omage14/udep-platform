@@ -1,0 +1,8 @@
+.card
+  .card-content
+    h4.display-4
+      = @student.name
+br
+= link_to 'Edit', edit_student_path(@student), class:"btn btn-secondary"
+span style="padding: 2px 2px 2px 2px;"
+= link_to 'Back', students_path, class:"btn btn-dark"

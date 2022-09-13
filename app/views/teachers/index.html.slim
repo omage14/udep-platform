@@ -1,0 +1,39 @@
+.container-fluid
+  .row
+    .col
+      h1 Teacher
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th scope="col" 
+        th scope="col" Name
+        th scope="col" Email
+        th scope="col" Mobile_Phone
+        th scope="col" RFC
+        th scope="col" CURP
+        th scope="col" Gender
+        th scope="col" Birthdate
+    tbody
+      - @teachers.each do |obj|
+        tr
+          td = obj.id
+          td = obj.name
+          td = obj.email
+          td = obj.mobile_phone
+          td = obj.rfc
+          td = obj.curp
+          td = obj.gender
+          td = obj.birthdate
+
+          td
+            = link_to  "Show", teacher_path(obj)
+          td
+            = link_to  'Edit', edit_teacher_path(obj)
+          td
+            = link_to "Delete", teacher_path(obj), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
+
+  br
+  = link_to 'New Teacher', new_teacher_path, class:"btn btn-secondary"
+      
+
+
