@@ -1,40 +1,40 @@
-- @students.model
-.row
-  .col-lg-3.col-md-3.col-sm-12.col-xs-12
-    h1 Students List
-  .col-lg-3.col-md-3.col-sm-12.col-xs-12.text-right
-    = link_to "New student", new_student_path, class: 'btn btn-primary'
-.row
-  .col
-    .container-fluid
-      div.table-responsive
-        table.table.table-striped.table-hover.table-borderless style="width: 100%;"
-          thead.thead-inverse
-            tr
-              th scope="col" 
-              th scope="col" Name
-              th scope="col" Email
-              th scope="col" Mobile_Phone
-              th scope="col" CURP
-              th scope="col" Gender
-              th scope="col" Birthdate
-          tbody
-            - @students.each do |obj|
+- if logged_in?
+  - @students.model
+  .row
+    .col-lg-3.col-md-3.col-sm-12.col-xs-12
+      h1 Students List
+    .col-lg-3.col-md-3.col-sm-12.col-xs-12.text-right
+      = link_to "New student", new_student_path, class: 'btn btn-primary'
+  .row
+    .col
+      .container-fluid
+        div.table-responsive
+          table.table.table-striped.table-hover.table-borderless style="width: 100%;"
+            thead.thead-inverse
               tr
-                td = obj.id
-                td = obj.name
-                td = obj.email
-                td = obj.mobile_phone
-                td = obj.curp
-                td = obj.gender
-                td = obj.birthdate
+                th scope="col" 
+                th scope="col" Name
+                th scope="col" Email
+                th scope="col" Mobile_Phone
+                th scope="col" CURP
+                th scope="col" Gender
+                th scope="col" Birthdate
+            tbody
+              - @students.each do |obj|
+                tr
+                  td = obj.id
+                  td = obj.name
+                  td = obj.email
+                  td = obj.mobile_phone
+                  td = obj.curp
+                  td = obj.gender
+                  td = obj.birthdate
 
-                td
-                  = link_to  "Show", student_path(obj)
-                td
-                  = link_to  'Edit', edit_student_path(obj)
-                td
-                  = link_to "Delete", student_path(obj), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
-
-
-
+                  td
+                    = link_to  "Show", student_path(obj)
+                  td
+                    = link_to  'Edit', edit_student_path(obj)
+                  td
+                    = link_to "Delete", student_path(obj), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
+- else 
+  

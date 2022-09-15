@@ -47,6 +47,8 @@ gem "will_paginate",           "3.3.1"
 gem "bootstrap-will_paginate", "1.0.0"
 gem 'slim-rails', '~> 3.5', '>= 3.5.1'
 gem 'simple_form'
+gem 'font-awesome-sass'
+
 
 # Use Sass to process CSS
 gem "bootstrap-sass",  "3.4.1"
