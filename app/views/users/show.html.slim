@@ -1,4 +1,18 @@
-= @user.name
-|
-br
-= @user.email
+.container style="margin: 0px 15rem 0rem 15rem;"
+  = link_to users_path, class: 'btn btn-primary' do
+    i class="fa-solid fa-backward"
+    |  Back
+  .container.mt-5 style="background-color: #F5F5F5; margin-top: 3rem;"
+    .row style="background-color: #F5F5F5; border-color: #F5F5F5;"
+      .col-sm-4 style="margin: 0px 0rem 0rem 0rem;"
+        h4 My profile
+      .col-sm-3 style="margin: 1rem 0rem 0rem 30rem;"
+        .col
+          = link_to "Edit", edit_user_path(@user.id), class: 'btn btn-primary'
+    p
+      b Nombre:&nbsp;
+      | #{@user.name}
+    p
+      b Correo electrónico:&nbsp;
+      | #{@user.email}
+      

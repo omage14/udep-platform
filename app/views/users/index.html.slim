@@ -1,6 +1,7 @@
-- provide(:title, 'All users')
-h1
-  | All users
-ul.users
-  = render @users
-= will_paginate
+.container style="margin: 0px 15rem 0rem 15rem;"
+  - @users.model
+  .row
+    .col-lg-3.col-md-3.col-sm-12.col-xs-12
+      h1 All users
+    = render @users
+  = will_paginate

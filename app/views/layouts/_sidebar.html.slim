@@ -1,0 +1,40 @@
+
+nav class="mnb navbar navbar-default" style="margin: 0px 15rem 0rem 15rem; border-style: none;"
+	div class="container-fluid"
+		div class="navbar-header"
+			button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"
+				span class="sr-only"
+					| Toggle navigation
+				i class="ic fa fa-bars"
+			div style="padding: 15px 0;"
+				a href="#" id="msbo"
+					i class="ic fa fa-bars"
+div#msb.msb
+	nav class="navbar navbar-default" role="navigation"
+		div class="navbar-header"
+			div class="brand-wrapper"
+				div class="brand-name-wrapper"
+					a class="navbar-brand" href="#"
+						| UDEP
+		div class="side-menu-container"
+			ul class="nav navbar-nav"
+				li
+					= link_to "/home"
+						i class="fa fa-dashboard"
+						| DASHBOARD
+				li
+					= link_to students_path
+						i class="fa-solid fa-graduation-cap" 
+						|  STUDENT
+				li
+					= link_to teachers_path
+							i class="fa-solid fa-person-chalkboard"
+							|  TEACHER
+				li
+					= link_to careers_path
+							i class="fa-solid fa-school"
+							|  CAREER
+				li
+					= link_to subjects_path
+							i class="fa-solid fa-book"
+							|  SUBJECT

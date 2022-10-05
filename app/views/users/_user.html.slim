@@ -1,6 +1,23 @@
-li
-  = link_to user.name, user
-  = link_to user.last_name, user
-  - if current_user.admin? && !current_user?(user)
-  |  | 
-  = link_to "delete", user, data: { "turbo-method": :delete, turbo_confirm: "You sure?" }
+.row
+  .col
+    table.table.table-striped.table-hover style="width: 100%;"
+      thead.thead-inverse
+        tr
+          th scope="col" 
+          th scope="col" Name
+          th scope="col" Email
+  
+      tbody
+        - @users.each do |user|
+            tr
+              td = user.id
+              td = user.name
+              td = user.last_name
+                
+                td
+                  = link_to  "Show", student_path(user)
+                td
+                  = link_to  'Edit', edit_student_path(user)
+                td
+                  - if current_user.admin? && !current_user?(user)
+                    = link_to "Delete", student_path(user), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}

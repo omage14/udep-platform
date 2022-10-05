@@ -1,26 +1,27 @@
-.container-fluid
-  .row
-    .col
-      h1 Career
-  table.table.table-striped.table-bordered.table-hover
-    thead
-      tr
-        th scope="col" 
-        th scope="col" Name
-    tbody
-      - @careers.each do |obj|
-        tr
-          td = obj.id
-          td = obj.name
-          td
-            = link_to  "Show", career_path(obj)
-          td
-            = link_to  'Edit', edit_career_path(obj)
-          td
-            = link_to "Delete", career_path(obj), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
-
-  br
-  = link_to 'New career', new_career_path, class:"btn btn-secondary"
-      
-
-
+.container style="margin: 0px 15rem 0rem 15rem;"
+  - if logged_in?
+    - @careers.model
+    .row
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12
+        h1 Careers List
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12.text-right
+        = link_to "New Career", new_career_path, class: 'btn btn-primary'
+    .row
+      .col
+        table.table.table-striped.table-hover style="width: 100%; position: sticky;"
+          thead.thead-inverse
+            tr
+              th scope="col" 
+              th scope="col" Name
+          tbody
+            - @careers.each do |career|
+              tr
+                td = career.id
+                td = career.name
+                td
+                  = link_to  "Show", career_path(career)
+                td
+                  = link_to  'Edit', edit_career_path(career)
+                td
+                  = link_to "Delete", career_path(career), data: { turbo_method: :delete , turbo_confirm: "Are you sure?"}
+   
